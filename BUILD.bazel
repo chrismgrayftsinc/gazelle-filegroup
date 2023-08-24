@@ -4,7 +4,7 @@ load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
 
 gazelle_binary(
     name = "gazelle_binary",
-    languages = [
+    languages = DEFAULT_LANGUAGES + [
         "//language/filegroup",
     ],
 )
@@ -20,7 +20,6 @@ gazelle(
     args = [
         "-from_file=go.mod",
         "-to_macro=deps.bzl%ugazelle_deps",
-        "-build_external=external",
         "-prune",
     ],
     command = "update-repos",
@@ -35,30 +34,6 @@ buildifier(
 alias(
     name = "gobin",
     actual = "@go_sdk//:bin/go",
-    visibility = ["//visibility:public"],
-)
-
-filegroup(
-    name = "all_files",
-    testonly = True,
-    srcs = [
-        ".bazelrc",
-        ".bazelversion",
-        ".gitignore",
-        ".user.bazelrc",
-        "BUILD.bazel",
-        "README.md",
-        "WORKSPACE",
-        "bazel-bin",
-        "bazel-out",
-        "bazel-testlogs",
-        "bazel-ugazelle",
-        "deps.bzl",
-        "go.mod",
-        "go.sum",
-        "//internal:all_files",
-        "//language:all_files",
-    ],
     visibility = ["//visibility:public"],
 )
 

@@ -71,13 +71,7 @@ def ugazelle_deps():
         sum = "h1:ta993UF76GwbvJcIo3Y68y/M3WxlpEHPWIGDkJYwzJI=",
         version = "v0.3.4",
     )
-    go_repository(
-        name = "com_github_davecgh_go_spew",
-        build_external = "external",
-        importpath = "github.com/davecgh/go-spew",
-        sum = "h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=",
-        version = "v1.1.0",
-    )
+
     go_repository(
         name = "com_github_envoyproxy_go_control_plane",
         build_external = "external",
@@ -131,8 +125,8 @@ def ugazelle_deps():
         name = "com_github_pelletier_go_toml",
         build_external = "external",
         importpath = "github.com/pelletier/go-toml",
-        sum = "h1:4yBQzkHv+7BHq2PQUZF3Mx0IYxG7LsP222s7Agd3ve8=",
-        version = "v1.9.5",
+        sum = "h1:tjENF6MfZAg8e4ZmZTeWaWiT2vXtsoO6+iuOjFhECwM=",
+        version = "v1.9.4",
     )
     go_repository(
         name = "com_github_pmezard_go_difflib",
@@ -148,27 +142,7 @@ def ugazelle_deps():
         sum = "h1:gQz4mCbXsO+nc9n1hCxHcGA3Zx3Eo+UHZoInFGUIXNM=",
         version = "v0.0.0-20190812154241-14fe0d1b01d4",
     )
-    go_repository(
-        name = "com_github_smacker_go_tree_sitter",
-        build_external = "external",
-        importpath = "github.com/smacker/go-tree-sitter",
-        sum = "h1:UFOHRX5nrxNCVORhicjy31nzSVt9rEjf/YRcx2Dc3MM=",
-        version = "v0.0.0-20220421092837-ec55f7cfeaf4",
-    )
-    go_repository(
-        name = "com_github_stretchr_objx",
-        build_external = "external",
-        importpath = "github.com/stretchr/objx",
-        sum = "h1:4G4v2dO3VZwixGIRoQ5Lfboy6nUhCyYzaqnIAPPhYs4=",
-        version = "v0.1.0",
-    )
-    go_repository(
-        name = "com_github_stretchr_testify",
-        build_external = "external",
-        importpath = "github.com/stretchr/testify",
-        sum = "h1:2E4SXV/wtOkTonXsotYi4li6zVWxYlZuYNCXe9XRJyk=",
-        version = "v1.4.0",
-    )
+
     go_repository(
         name = "com_github_yuin_goldmark",
         build_external = "external",
@@ -183,20 +157,7 @@ def ugazelle_deps():
         sum = "h1:e0WKqKTd5BnrG8aKH3J3h+QvEIQtSUcf2n5UZ5ZgLtQ=",
         version = "v0.26.0",
     )
-    go_repository(
-        name = "in_gopkg_check_v1",
-        build_external = "external",
-        importpath = "gopkg.in/check.v1",
-        sum = "h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=",
-        version = "v0.0.0-20161208181325-20d25e280405",
-    )
-    go_repository(
-        name = "in_gopkg_yaml_v2",
-        build_external = "external",
-        importpath = "gopkg.in/yaml.v2",
-        sum = "h1:ZCJp+EgiOT7lHqUV2J862kp8Qj64Jo6az82+3Td9dZw=",
-        version = "v2.2.2",
-    )
+
     go_repository(
         name = "net_starlark_go",
         build_external = "external",
@@ -236,8 +197,8 @@ def ugazelle_deps():
         name = "org_golang_x_crypto",
         build_external = "external",
         importpath = "golang.org/x/crypto",
-        sum = "h1:7I4JAnoQBe7ZtJcBaYHi5UtiO8tQHbUSXxL+pnGRANg=",
-        version = "v0.0.0-20210921155107-089bfa567519",
+        sum = "h1:VklqNMn3ovrHsnt90PveolxSbWFaJdECFbxSq0Mqo2M=",
+        version = "v0.0.0-20190308221718-c2843e01d9a2",
     )
     go_repository(
         name = "org_golang_x_exp",
@@ -271,8 +232,8 @@ def ugazelle_deps():
         name = "org_golang_x_sync",
         build_external = "external",
         importpath = "golang.org/x/sync",
-        sum = "h1:Ax0t5p6N38Ga0dThY21weqDEyz2oklo4IvDkpigvkD8=",
-        version = "v0.0.0-20220601150217-0de741cfad7f",
+        sum = "h1:5KslGYwFpkhGh+Q16bwMP3cOontH8FOep7tGV86Y7SQ=",
+        version = "v0.0.0-20210220032951-036812b2e83c",
     )
     go_repository(
         name = "org_golang_x_sys",
