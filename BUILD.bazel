@@ -5,10 +5,7 @@ load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
 gazelle_binary(
     name = "gazelle_binary",
     languages = [
-        "//language/bzl",
         "//language/filegroup",
-        "//language/go",
-        "//language/proto",
     ],
 )
 
@@ -70,4 +67,12 @@ bzl_library(
     srcs = ["deps.bzl"],
     visibility = ["//visibility:public"],
     deps = ["@bazel_gazelle//:deps"],
+)
+
+filegroup(
+    name = "all_srcs",
+    srcs = [
+        "//language:all_srcs",
+    ],
+    visibility = ["//:__subpackages__"],
 )

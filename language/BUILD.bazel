@@ -10,3 +10,9 @@ filegroup(
     ],
     visibility = ["//visibility:public"],
 )
+
+filegroup(
+    name = "all_srcs",
+    srcs = ["//language/filegroup:all_srcs"],
+    visibility = ["//:__subpackages__"],
+)

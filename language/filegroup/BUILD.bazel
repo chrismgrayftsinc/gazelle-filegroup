@@ -24,3 +24,9 @@ filegroup(
     ],
     visibility = ["//visibility:public"],
 )
+
+filegroup(
+    name = "all_srcs",
+    srcs = ["lang.go"],
+    visibility = ["//:__subpackages__"],
+)
