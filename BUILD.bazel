@@ -9,7 +9,7 @@ gazelle_binary(
     ],
 )
 
-# gazelle:prefix github.com/sluongng/ugazelle
+# gazelle:prefix github.com/chrismgrayftsinc/gazelle_filegroup
 gazelle(
     name = "gazelle",
     gazelle = "gazelle_binary",

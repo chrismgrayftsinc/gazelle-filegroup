@@ -3,7 +3,7 @@ load("@io_bazel_rules_go//go:def.bzl", "go_library")
 go_library(
     name = "filegroup",
     srcs = ["lang.go"],
-    importpath = "github.com/sluongng/ugazelle/language/filegroup",
+    importpath = "github.com/chrismgrayftsinc/gazelle_filegroup/language/filegroup",
     visibility = ["//visibility:public"],
     deps = [
         "@bazel_gazelle//config:go_default_library",
