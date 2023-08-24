@@ -24,6 +24,7 @@ package filegroup
 import (
 	"flag"
 	"path"
+	"strings"
 
 	"github.com/bazelbuild/bazel-gazelle/config"
 	"github.com/bazelbuild/bazel-gazelle/label"
@@ -76,18 +77,21 @@ var kinds = map[string]rule.KindInfo{
 }
 
 func (*testFilegroupLang) GenerateRules(args language.GenerateArgs) language.GenerateResult {
-	r := rule.NewRule("filegroup", "all_files")
+	r := rule.NewRule("filegroup", "all_srcs")
 	srcs := make([]string, 0, len(args.Subdirs)+len(args.RegularFiles))
-	srcs = append(srcs, args.RegularFiles...)
+	for _, file := range args.RegularFiles {
+		if strings.HasSuffix(file, ".java") || strings.HasSuffix(file, ".go") {
+			srcs = append(srcs, file)
+		}
+	}
 	for _, f := range args.Subdirs {
 		pkg := path.Join(args.Rel, f)
-		srcs = append(srcs, "//"+pkg+":all_files")
+		srcs = append(srcs, "//"+pkg+":all_srcs")
 	}
 	r.SetAttr("srcs", srcs)
 	// TODO: make this optional / configurable
-	r.SetAttr("testonly", true)
 	if args.File == nil || !args.File.HasDefaultVisibility() {
-		r.SetAttr("visibility", []string{"//visibility:public"})
+		r.SetAttr("visibility", []string{"//:__subpackages__"})
 	}
 	return language.GenerateResult{
 		Gen:     []*rule.Rule{r},
